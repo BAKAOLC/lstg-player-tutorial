@@ -17,6 +17,7 @@
     #chapter("docs/dataer/player.typ")[`player.lua` 解析]
     #chapter("docs/dataer/player-system.typ")[`player_system.lua` 解析]
     #chapter("docs/dataer/wisys.typ")[`PlayerWalkImageSystem` 解析]
+    #chapter("docs/dataer/others.typ")[杂项]
 
     = 没人看的附录
     #suffix-chapter("docs/appendix/lstg-gameobject.typ")[`lstg.GameObject.lua`]

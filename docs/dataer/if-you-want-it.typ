@@ -1,4 +1,4 @@
-#import "/book.typ": book-page
+#import "/book.typ": book-page, cross-link
 
 #show: book-page
 
@@ -23,13 +23,13 @@
 #image("/assets/images/if-you-want-it-2.png", width: 50%)
 
 我翻了一遍搜索结果，把自机相关的文件总结如下：
-+ `game\packages\thlib-scripts\THlib\player\player.lua` \
++ #cross-link("/docs/appendix/player-lua.typ")[`game\packages\thlib-scripts\THlib\player\player.lua`] \
   浅层的自机逻辑，涉及自机的 base class 以及一些自机相关的class和函数
-+ `game\packages\thlib-scripts\THlib\player\player_system.lua` \
++ #cross-link("/docs/appendix/player-system-lua.typ")[`game\packages\thlib-scripts\THlib\player\player_system.lua`] \
   深层的自机逻辑，涉及大量的自机特有的属性和行为
 + `game\plugins\PlayerExtensions` \
   自带的灵梦、魔理沙、咲夜自机
-+ `game\packages\thlib-scripts\THlib\WalkImageSystem.lua` \
++ #cross-link("/docs/appendix/wisys-lua.typ")[`game\packages\thlib-scripts\THlib\WalkImageSystem.lua`] \
   自机使用的行走图系统 `PlayerWalkImageSystem`
-+ `doc\core\lstg.GameObject.lua` \
++ #cross-link("/docs/appendix/lstg-gameobject.typ")[`doc\core\lstg.GameObject.lua`] \
   虽然不是自机相关，但这里说明了所有 class, object 共有的属性
