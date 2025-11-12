@@ -19,12 +19,12 @@
 - class：面向对象里的 "类" 这一概念，也指LuaSTG里用`Class()`函数生成的对象模板。
 
   对应到Sharp就是 define bullet, define object 等节点。
-  #image("/assets/images/preface-1.png", width: 250pt)
+  #image("/assets/images/preface-1.png", width: 50%)
 
 - object：面向对象里的 “对象” 这一概念，也指LuaSTG里用`New()`函数生成的对象实例。
 
   对应到Sharp就是 create bullet, create object 等节点。
-  #image("/assets/images/preface-2.png", width: 500pt)
+  #image("/assets/images/preface-2.png", width: 100%)
 
   另外，LuaSTG中最基本的class的变量名也是`object`。
 
