@@ -5,7 +5,7 @@
 #book-meta(
   title: "何日完工?",
   authors: ("TengoDango",),
-  repository: "https://github.com/TengoDango/LstgMathTutorial",
+  repository: "https://github.com/TengoDango/lstg-player-tutorial/",
   summary: [
     #prefix-chapter("docs/preface.typ")[没人看的序言]
 
