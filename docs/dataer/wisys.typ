@@ -1,4 +1,4 @@
-#import "/book.typ": book-page
+#import "/include.typ": *
 
 #show: book-page
 

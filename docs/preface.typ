@@ -1,4 +1,4 @@
-#import "/book.typ": book-page
+#import "/include.typ": *
 
 #show: book-page
 
@@ -12,7 +12,7 @@
 - 有一个趁手的代码编辑器（记事本战神？失敬失敬）
 
 一些术语的说明：
-- table：Lua的一个数据类型，一般翻译为 "表"。
+- table：Lua的一个数据类型，一般翻译为 "表"。在一个变量中包含多个数据，通常用整数或字符串作为索引。
 
   作为Lua里为数不多的引用类型，table在LuaSTG中到处都是，而且用法多样，是语法上的一个重难点。
 
@@ -28,6 +28,8 @@
 
   另外，LuaSTG中最基本的class的变量名也是`object`。
 
+- obj：object的缩写。在不区分class和object的场合经常使用。
+
 - field：在面向对象中指class或object中存储数据的成员变量，有 "成员" "字段" "属性" 等等相似但又好像有微妙区别的名称。
 
   也可以指table中的一类元素，通常用形如 "`self.x`" 的形式表示，其中 `self` 是一个table，`x` 是对应的field名称。
@@ -36,7 +38,7 @@
 
 - 方法：函数类型的field，也就是定义在class和object里的函数。
 
-  定义在一般table里的函数也可以叫方法。
+  定义在一般table里的函数也可以叫方法，毕竟class和object本质都是table。
 
 - 回调函数：一类特殊的方法，由data在特定的时候自动调用，一般不需要手动调用。
 

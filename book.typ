@@ -3,7 +3,7 @@
 #show: book
 
 #book-meta(
-  title: "LuaSTG 数学基础",
+  title: "何日完工?",
   authors: ("TengoDango",),
   repository: "https://github.com/TengoDango/LstgMathTutorial",
   summary: [
@@ -38,6 +38,7 @@
   show raw.where(block: true): set text(size: 14pt)
   
   show image: set align(center)
+  show figure: set align(center)
 
   show strong: set text(blue)
 
