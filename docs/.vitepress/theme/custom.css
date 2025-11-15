@@ -22,7 +22,7 @@
 .vp-doc mjx-container[display="true"],
 .vp-doc .mjx-container[display="true"] {
   overflow: visible !important;
-  min-height: 120px !important;
+  min-height: auto !important;
   max-height: none !important;
   height: auto !important;
 }

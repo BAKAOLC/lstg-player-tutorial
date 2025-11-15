@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import mathjax3 from 'markdown-it-mathjax3'
 
 export default defineConfig({
   title: '何日完工?',
@@ -50,7 +51,10 @@ export default defineConfig({
   
   markdown: {
     lineNumbers: true,
-    math: true
+    math: true,
+    config: (md) => {
+      md.use(mathjax3)
+    }
   }
 })
 
