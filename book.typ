@@ -46,12 +46,8 @@
   content
 }
 
-#let prefix = "/{{ path_to_root }}"
-// #let prefix = "."
-
 #let cross-ref(path, reference: none, content) = cross-link(
-  prefix + path,
-  // path,
+  x-url-base + path,
   reference: if reference != none {
     heading-reference(reference)
   },
