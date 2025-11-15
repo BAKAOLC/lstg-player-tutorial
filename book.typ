@@ -32,6 +32,15 @@
 
 #let my_prefix = "/test" + str(x-url-base) + "/test"
 
+#let cross-ref(path, reference: none, content) = cross-link(
+  my_prefix + path,
+  reference: if reference != none {
+    heading-reference(reference)
+  },
+  my_prefix,
+  // content,
+)
+
 #let book-page(content) = {
   show: project.with(
     authors: "TengoDango",
@@ -40,7 +49,7 @@
   )
 
   show raw.where(block: true): set text(size: 14pt)
-  
+
   show image: set align(center)
   show figure: set align(center)
 
@@ -48,13 +57,3 @@
 
   content
 }
-
-#let cross-ref(path, reference: none, content) = cross-link(
-  my_prefix + path,
-  reference: if reference != none {
-    heading-reference(reference)
-  },
-  my_prefix
-  // content,
-)
-
