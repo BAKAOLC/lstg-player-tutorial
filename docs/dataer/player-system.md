@@ -1,14 +1,10 @@
-#import "/include.typ": *
+# `player_system.lua` 解析
 
-#show: book-page
-
-= `player_system.lua` 解析
-
-== `player_lib`
+## `player_lib`
 
 起到一个命名空间的作用, 纯粹就是含有一些自机组件的一个table.
 
-== `defaultKeyEvent`
+## `defaultKeyEvent`
 
 一个table, 记录了按键按下/松开对应的事件.
 一个 "事件" 主要由触发条件和回调函数构成,
@@ -25,7 +21,7 @@
 总之形如 `self.__xxx_flag` 的属性表示按键按下
 (true) 或松开 (false) 的状态, 别的没什么好说的.
 
-== `defaultFrameEvent`
+## `defaultFrameEvent`
 
 一个table, 记录了自机每帧需要执行的一些事件.
 这些事件涉及自机各个系统的具体实现方法,
@@ -33,14 +29,14 @@
 
 语法上不用想太多, 就是一个用字符串索引的table.
 
-=== `["frame.updateDeathState"]`
+### `["frame.updateDeathState"]`
 
-根据 `self.death` ($0 <= dot <= 100$ 的整数)
+根据 `self.death` ($0 \leq \text{death} \leq 100$ 的整数)
 将自机的死亡过程划分为几个阶段.
 
 `/*TODO*/`
 
-=== `["frame.updateSlow"]`
+### `["frame.updateSlow"]`
 
 当自机没有被弹时 (`self.__death_state == 0`),
 根据shift键的状态 (`self.__slow_flag`)
@@ -48,9 +44,9 @@
 
 顺便一提, 当 `self.slowlock` 为真时,
 自机会强制处于低速状态, 具体实现逻辑见
-#cross-ref("dataer/player-system.typ", reference: [=== `["frame.move"]`])[`["frame.move"]`]
+[`["frame.move"]`](#frame-move)
 
-=== `["frame.control"]`
+### `["frame.control"]`
 
 调用自机系统的 `shoot, spell, special` 函数,
 从而实现自机的射击行为.
@@ -61,7 +57,9 @@
 - 特殊条件: `player_lib.debug_data.keep_shooting`
   对应调试功能: 保持射击.
   在游戏界面按 `F3` 可以找到对应开关.
-  #image("/assets/images/player-system-1.png", width: 50%)
+  
+  <img src="/lstg-player-tutorial/assets/images/player-system-1.png" alt="调试界面" style="width: 50%; display: block; margin: 0 auto;">
+  
 - 特殊条件: `lstg.var.bomb` 对应bomb数量,
   没有bomb时不会触发`spell`函数.
 - 特殊条件: `lstg.var.block_spell` 为真时不会触发
@@ -72,17 +70,9 @@
   在对话状态结束后的 15/30 帧内,
   自机无法 射击/放b.
 
-=== `["frame.move"]`
+### `["frame.move"]` {#frame-move}
 
-#cross-ref("dataer/player.typ", reference: [== `player_bullet_straight`])[`1`]
+[`player_bullet_straight`](./player.md#player_bullet_straight)
 
-#cross-ref("dataer/player-system.typ", reference: [=== `["frame.move"]`])[`2`]
+[`["frame.move"]`](#frame-move)
 
-// == `player_lib.system`
-
-// 记录了自机回调函数具体逻辑的table.
-// `plus.Class()`并不是我们通常使用的`Class`,
-// 而只是在基础table的基础上加了元表来支持一些语法特性.
-// 现阶段当成是普通的table就行.
-
-// 以下简写为 `system`.

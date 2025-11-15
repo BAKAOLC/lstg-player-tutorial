@@ -1,8 +1,8 @@
-#import "/include.typ": *
+# 何日完工?
 
-#show: book-page
+欢迎来到 LuaSTG 自机教程！
 
-= 没人看的序言
+## 没人看的序言
 
 本教程基于 `LuaSTG aex+ v0.8.22` 版本,
 可能在你看到本教程时这个版本已经比较旧了,
@@ -27,12 +27,14 @@
 - class: 面向对象里的 "类" 这一概念, 也指LuaSTG里用`Class()`函数生成的对象模板.
 
   对应到Sharp就是 define bullet, define object 等节点.
-  #image("/assets/images/preface-1.png", width: 50%)
+  
+  <img src="/lstg-player-tutorial/assets/images/preface-1.png" alt="class示例" style="width: 50%; display: block; margin: 0 auto;">
 
 - object: 面向对象里的 "对象" 这一概念, 也指LuaSTG里用`New()`函数生成的对象实例.
 
   对应到Sharp就是 create bullet, create object 等节点.
-  #image("/assets/images/preface-2.png", width: 100%)
+  
+  <img src="/lstg-player-tutorial/assets/images/preface-2.png" alt="object示例" style="width: 100%; display: block; margin: 0 auto;">
 
   另外, LuaSTG中最基本的class的变量名也是`object`.
 
@@ -53,3 +55,4 @@
 - 回调函数: 一类特殊的方法, 由data在特定的时候自动调用, 一般不需要手动调用.
 
   "调" 指函数调用, "回" 表示这个调用是别人 (data或其他地方) *反过来*调用我们提供的函数.
+
