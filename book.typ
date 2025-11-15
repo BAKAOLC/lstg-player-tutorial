@@ -39,19 +39,28 @@
   } else {
     path
   }
-  // Ensure path starts with / for absolute path
-  let abs-path = if clean-path.starts-with("/") {
-    clean-path
+  // Ensure path doesn't start with / to avoid double slashes
+  let rel-path = if clean-path.starts-with("/") {
+    clean-path.slice(1)
   } else {
-    "/" + clean-path
+    clean-path
+  }
+  // Ensure prefix is correct: should be /lstg-player-tutorial/ or similar
+  // If my_prefix is empty or just "/", use a default
+  let prefix = if my_prefix == "" or my_prefix == "/" {
+    "/lstg-player-tutorial/"
+  } else if my_prefix.ends-with("/") {
+    my_prefix
+  } else {
+    my_prefix + "/"
   }
   // cross-link returns a function, content is passed via function call syntax
   cross-link(
-    my_prefix + abs-path,
+    prefix + rel-path,
     reference: if reference != none {
       heading-reference(reference)
     },
-    my_prefix,
+    prefix,
   )
 }
 
