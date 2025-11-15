@@ -53,6 +53,7 @@
   reference: if reference != none {
     heading-reference(reference)
   },
-  content,
+  [#(prefix + path)]
+  // content,
 )
 
