@@ -49,7 +49,7 @@
 
 #let prefix = str(x-url-base)
 #let cross-ref(path, reference: none, content) = cross-link(
-  prefix + path,
+  path + prefix,
   reference: if reference != none {
     heading-reference(reference)
   },
