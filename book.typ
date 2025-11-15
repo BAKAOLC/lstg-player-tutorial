@@ -1,7 +1,9 @@
 #import "@preview/shiroa:0.3.0": *
+#import templates: heading-reference
 
 #show: book
 
+#let prefix = ""
 #book-meta(
   title: "何日完工?",
   authors: ("TengoDango",),
@@ -13,17 +15,17 @@
     #chapter("mainline/beginning.typ")[那么从哪里开始呢]
 
     = 我要翻 data!
-    #chapter("dataer/if-you-want-it.typ", section: "0")[如果你想要, 你得自己来拿]
-    #chapter("dataer/player.typ")[`player.lua` 解析]
-    #chapter("dataer/player-system.typ")[`player_system.lua` 解析]
-    #chapter("dataer/wisys.typ")[`PlayerWalkImageSystem` 解析]
-    #chapter("dataer/others.typ")[杂项]
+    #chapter(prefix + "dataer/if-you-want-it.typ", section: "0")[如果你想要, 你得自己来拿]
+    #chapter(prefix + "dataer/player.typ")[`player.lua` 解析]
+    #chapter(prefix + "dataer/player-system.typ")[`player_system.lua` 解析]
+    #chapter(prefix + "dataer/wisys.typ")[`PlayerWalkImageSystem` 解析]
+    #chapter(prefix + "dataer/others.typ")[杂项]
 
     = 没人看的附录
-    #suffix-chapter("appendix/lstg-gameobject.typ")[`lstg.GameObject.lua`]
-    #suffix-chapter("appendix/player-lua.typ")[`player.lua`]
-    #suffix-chapter("appendix/player-system-lua.typ")[`player_system.lua`]
-    #suffix-chapter("appendix/wisys-lua.typ")[`PlayerWalkImageSystem`]
+    #suffix-chapter(prefix + "appendix/lstg-gameobject.typ")[`lstg.GameObject.lua`]
+    #suffix-chapter(prefix + "appendix/player-lua.typ")[`player.lua`]
+    #suffix-chapter(prefix + "appendix/player-system-lua.typ")[`player_system.lua`]
+    #suffix-chapter(prefix + "appendix/wisys-lua.typ")[`PlayerWalkImageSystem`]
   ],
 )
 
@@ -48,7 +50,9 @@
 #let cross-ref(path, reference: none, content) = cross-link(
   "/lstg-player-tutorial" + path,
   // path,
-  reference: none,
+  reference: if reference != none {
+    heading-reference(reference)
+  },
   content,
 )
 
